@@ -3,7 +3,7 @@ const Genre = require("../models/Genre.model");
 //All Genres
 exports.getAllGenres = async (req, res, next) => {
   try {
-    const allGenres = await Genre.find().populate('books'); //Populate para leer el libro (está en otra colección)
+    const allGenres = await Genre.find().populate('books'); //Populate para leer el libro. Así se llama la clave en la colección Genres (se puede ver en el modelo)
     res.status(200).json(allGenres);
   } catch (err) {
     return res.status(500).json(err);
@@ -14,7 +14,7 @@ exports.getAllGenres = async (req, res, next) => {
 exports.getGenreById = async (req, res, next) => {
   const id = req.params.id;
   try {
-    const genreById = await Genre.findById(id).populate('books'); //Populate para leer el libro (está en otra colección)
+    const genreById = await Genre.findById(id).populate('books'); //Populate para leer el libro. Así se llama la clave en la colección Genres (se puede ver en el modelo)
     if (genreById) {
       res.status(200).json(genreById);
     } else {
