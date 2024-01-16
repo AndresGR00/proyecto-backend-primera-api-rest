@@ -57,7 +57,6 @@ exports.editABook = async (req, res, next) => {
     return next(err);
   }
 };
-//Falta añadir que muestre la actualización directamente (Clase online Santi)
 
 //Delete by ID
 exports.deleteABook = async (req, res, next) => {
